@@ -125,6 +125,8 @@ public class Main {
     }
 
     private void extractTags(String projectName) throws GitAPIException, IOException {
+        System.out.println("\n\nTAG EXTRACTION INITIATED: ");
+
         GHTagLister tagLister = new GHTagLister(git, repository, projectName);
         tagLister.listAndSortTags();
         tagLister.assignCommitsToTags();
@@ -144,8 +146,8 @@ public class Main {
 //                "google/guava"
 //                "mockito/mockito"
 //                "apache/commons-lang"
-                "apache/hadoop",
-                "elastic/elasticsearch"
+//                "apache/hadoop",
+//                "elastic/elasticsearch"
 //                "SeleniumHQ/selenium"
 //                "spring-projects/spring-framework"
 //                "apache/tomcat"

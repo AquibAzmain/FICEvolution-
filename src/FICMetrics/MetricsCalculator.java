@@ -19,8 +19,8 @@ public class MetricsCalculator {
 			List<Integer> fileLines) {
 		List<GHMethod> FICMethodsNew = calculateCC(fileContentNew, fileLines);
 		List<GHMethod> FICMethodsPrevious = calculateCC(fileContentPrevious, fileLines);
-		System.out.println(FICMethodsNew);
-		System.out.println(FICMethodsPrevious);
+//		System.out.println(FICMethodsNew);
+//		System.out.println(FICMethodsPrevious);
 		List<GHMethod> FilteredMethods = new ArrayList<GHMethod>();
 		for (int i = 0; i < FICMethodsNew.size(); i++) {			
 			for (int j =0; j< FICMethodsPrevious.size();j++) {

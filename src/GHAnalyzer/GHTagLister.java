@@ -36,12 +36,10 @@ public class GHTagLister {
 
     public void listAndSortTags() throws GitAPIException {
         List<Ref> refs  = git.tagList().call();
-        System.out.println(refs.size());
 
         for (Ref ref : refs) {
             GHTag ghTag = new GHTag(ref);
             String version = VersionExtractor.extractVersionForProject(projectName, ref.getName());
-            System.out.println(ref.getName() + " " + version);
             if(version != null) {
                 ghTag.setVersion(version);
                 ghTag.setSeparator(VersionExtractor.extractSeparatorForProject(projectName));
