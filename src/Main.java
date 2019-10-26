@@ -82,8 +82,8 @@ public class Main {
         openRepo(project);
         extractTags(project);
         labelFICs(project);
-        classifyCommits(project);
-//        analyzeCommits();
+//        classifyCommits(project);
+        analyzeCommits();
         analyzeMetrics();
     }
 
