@@ -32,7 +32,7 @@ public class Main {
             System.out.println("BEGIN ANALYSIS for " + project);
             init();
             collectData(project);
-//            outputData(project);
+            outputData(project);
         }
     }
 
@@ -81,10 +81,10 @@ public class Main {
     private void collectData(String project) throws IOException, GitAPIException {
         openRepo(project);
         extractTags(project);
-//        labelFICs(project);
-////            classifyCommits(project);
+        labelFICs(project);
+        classifyCommits(project);
 //        analyzeCommits();
-//        analyzeMetrics();
+        analyzeMetrics();
     }
 
     private void init() {
@@ -144,11 +144,11 @@ public class Main {
 //                "google/guava"
 //                "mockito/mockito"
 //                "apache/commons-lang"
-//                "apache/hadoop",
-//                "elastic/elasticsearch"
+                "apache/hadoop",
+                "elastic/elasticsearch"
 //                "SeleniumHQ/selenium"
 //                "spring-projects/spring-framework"
-                "apache/tomcat"
+//                "apache/tomcat"
         );
 
     }
