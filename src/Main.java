@@ -144,7 +144,11 @@ public class Main {
 //                "google/guava"
 //                "mockito/mockito"
 //                "apache/commons-lang"
-                "elastic/elasticsearch"
+//                "apache/hadoop"
+//                "elastic/elasticsearch"
+//                "SeleniumHQ/selenium"
+//                "spring-projects/spring-framework"
+                "apache/tomcat"
         );
 
     }
