@@ -12,8 +12,8 @@ public class VersionExtractor {
                 return versionExtraction1(tagName);
             case "apache/commons-lang":
                 return versionExtraction2(tagName);
-            case "elastic/elastic-search":
-                return versionExtraction3(tagName);
+            case "elastic/elasticsearch":
+                return versionExtraction1(tagName);
             case "apache/hadoop":
                 return versionExtraction4(tagName);
             case "SeleniumHQ/selenium":
@@ -36,8 +36,8 @@ public class VersionExtractor {
                 return "\\.";
             case "apache/commons-lang":
                 return "_";
-            case "elastic/elastic-search":
-                return "_";
+            case "elastic/elasticsearch":
+                return "\\.";
             case "apache/hadoop":
                 return "\\.";
             case "SeleniumHQ/selenium":
@@ -59,29 +59,38 @@ public class VersionExtractor {
             if(!v.matches("^[0-9]+$"))
                 return null;
         }
-        return name.substring(5);
+        return name.substring(1, name.length()-8);
     }
 
     private static String versionExtraction5(String name) {
         name = name.substring(10);
-        if(!name.startsWith("Selenium"))
+        if(!name.startsWith("selenium"))
             return null;
         for(String v : Arrays.asList(name.substring(9).split("\\."))){
             if(!v.matches("^[0-9]+$"))
                 return null;
         }
-        return name.substring(5);
+        return name.substring(9);
     }
 
     private static String versionExtraction4(String name) {
         name = name.substring(10);
-        if(!name.startsWith("rel/release"))
+        if(!name.startsWith("rel/release") && !name.startsWith("release"))
             return null;
-        for(String v : Arrays.asList(name.substring(12).split("\\."))){
+
+        if(name.startsWith("rel/release")){
+            for(String v : Arrays.asList(name.substring(12).split("\\."))){
+                if(!v.matches("^[0-9]+$"))
+                    return null;
+            }
+            return name.substring(12);
+        }
+
+        for(String v : Arrays.asList(name.substring(8).split("\\."))){
             if(!v.matches("^[0-9]+$"))
                 return null;
         }
-        return name.substring(5);
+        return name.substring(8);
     }
 
     private static String versionExtraction3(String name) {
