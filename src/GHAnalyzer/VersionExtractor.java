@@ -7,45 +7,37 @@ public class VersionExtractor {
         String version = null;
         switch (projectName) {
             case "mockito/mockito":
-                return versionExtraction1(tagName);
+            case "elastic/elasticsearch":
             case "google/guava":
                 return versionExtraction1(tagName);
             case "apache/commons-lang":
                 return versionExtraction2(tagName);
-            case "elastic/elasticsearch":
-                return versionExtraction1(tagName);
+            case "apache/tomcat":
+                return versionExtraction3(tagName);
             case "apache/hadoop":
                 return versionExtraction4(tagName);
             case "SeleniumHQ/selenium":
                 return versionExtraction5(tagName);
             case "spring-projects/spring-framework":
                 return versionExtraction6(tagName);
-            case "apache/tomcat":
-                return versionExtraction1(tagName);
         }
 
         return version;
     }
 
     public static String extractSeparatorForProject(String projectName){
-        String version = null;
+        String version = "\\.";
         switch (projectName) {
             case "mockito/mockito":
-                return "\\.";
             case "google/guava":
+            case "elastic/elasticsearch":
+            case "apache/hadoop":
+            case "SeleniumHQ/selenium":
+            case "spring-projects/spring-framework":
+            case "apache/tomcat":
                 return "\\.";
             case "apache/commons-lang":
                 return "_";
-            case "elastic/elasticsearch":
-                return "\\.";
-            case "apache/hadoop":
-                return "\\.";
-            case "SeleniumHQ/selenium":
-                return "\\.";
-            case "spring-projects/spring-framework":
-                return "\\.";
-            case "apache/tomcat":
-                return "\\.";
         }
 
         return version;
@@ -95,13 +87,11 @@ public class VersionExtractor {
 
     private static String versionExtraction3(String name) {
         name = name.substring(10);
-        if(!name.startsWith("Elasticsearch "))
-            return null;
-        for(String v : Arrays.asList(name.substring(14).split("\\."))){
+        for(String v : Arrays.asList(name.split("\\."))){
             if(!v.matches("^[0-9]+$"))
                 return null;
         }
-        return name.substring(5);
+        return name;
     }
 
     private static String versionExtraction2(String name) {
