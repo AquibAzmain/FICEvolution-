@@ -21,3 +21,12 @@ Details:
     + cyclomatic complexity
     + commit interval
 7. outputs evolution findings (single csv with 4 columns): per tag frequency of FICs, frequency of non-FICs and ratio of FICs
+
+To-do:
+1. change interval metrics (instead of FIC-to-FIC interval, calculate any-to-FIC interval)
+2. for FICs, take into account only those changes that were directly responsible for the bug
+    1. parse new FIC data
+    2. extract only special lines of code
+3. add more metrics
+    + method cohesion
+    + class coupling
