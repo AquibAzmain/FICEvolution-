@@ -143,14 +143,14 @@ public class Main {
 
     private List<String> getProjects() {
         return Arrays.asList(
-                "google/guava"
-//                "mockito/mockito",
-//                "apache/commons-lang",
-//                "apache/hadoop",
-//                "elastic/elasticsearch",
-//                "SeleniumHQ/selenium",
-//                "spring-projects/spring-framework",
-//                "apache/tomcat"
+                "google/guava",
+                "mockito/mockito",
+                "apache/commons-lang",
+                "apache/hadoop",
+                "elastic/elasticsearch",
+                "SeleniumHQ/selenium",
+                "spring-projects/spring-framework",
+                "apache/tomcat"
         );
 
     }
