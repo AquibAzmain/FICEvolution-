@@ -30,3 +30,4 @@ To-do:
 3. add more metrics
     + method cohesion
     + class coupling
+4. handle memory out of bounds problem
