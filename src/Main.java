@@ -38,8 +38,8 @@ public class Main {
 
     private void outputData(String project) throws FileNotFoundException {
         String projectName = project.split("/")[1];
-        outputLoc(projectName);
-        outputCyc(projectName);
+//        outputLoc(projectName);
+//        outputCyc(projectName);
         outputInterval(projectName);
         outputFreq(projectName);
     }
@@ -83,8 +83,8 @@ public class Main {
         extractTags(project);
         labelFICs(project);
 //        classifyCommits(project);
-        analyzeCommits();
-        analyzeMetrics();
+//        analyzeCommits();
+//        analyzeMetrics();
     }
 
     private void init() {
@@ -143,13 +143,13 @@ public class Main {
 
     private List<String> getProjects() {
         return Arrays.asList(
-//                "google/guava"
-//                "mockito/mockito"
-//                "apache/commons-lang"
+                "google/guava"
+//                "mockito/mockito",
+//                "apache/commons-lang",
 //                "apache/hadoop",
-//                "elastic/elasticsearch"
-//                "SeleniumHQ/selenium"
-//                "spring-projects/spring-framework"
+//                "elastic/elasticsearch",
+//                "SeleniumHQ/selenium",
+//                "spring-projects/spring-framework",
 //                "apache/tomcat"
         );
 
