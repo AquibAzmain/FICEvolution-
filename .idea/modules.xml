@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ficevolution.iml" filepath="$PROJECT_DIR$/.idea/ficevolution.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/ficevolution.iml" filepath="$PROJECT_DIR$/.idea/ficevolution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ficevolution.iml" filepath="$PROJECT_DIR$/ficevolution.iml" />
     </modules>
   </component>
 </project>

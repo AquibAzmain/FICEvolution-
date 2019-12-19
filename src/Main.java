@@ -32,7 +32,7 @@ public class Main {
             System.out.println("BEGIN ANALYSIS for " + project);
             init();
             collectData(project);
-            outputData(project);
+//            outputData(project);
         }
     }
 
@@ -82,9 +82,16 @@ public class Main {
         openRepo(project);
         extractTags(project);
         labelFICs(project);
+        processChunks();
 //        classifyCommits(project);
 //        analyzeCommits();
 //        analyzeMetrics();
+    }
+
+    private void processChunks() {
+        ChunkProcessor chunkProcessor = new ChunkProcessor();
+        for(GHTag tag : tags)
+            chunkProcessor.processChunks(tag);
     }
 
     private void init() {
@@ -143,13 +150,13 @@ public class Main {
 
     private List<String> getProjects() {
         return Arrays.asList(
-                "google/guava",
-                "mockito/mockito",
-                "apache/commons-lang",
-                "apache/hadoop",
-                "elastic/elasticsearch",
-                "SeleniumHQ/selenium",
-                "spring-projects/spring-framework",
+//                "google/guava",
+//                "mockito/mockito",
+//                "apache/commons-lang",
+//                "apache/hadoop",
+//                "elastic/elasticsearch",
+//                "SeleniumHQ/selenium",
+//                "spring-projects/spring-framework",
                 "apache/tomcat"
         );
 
