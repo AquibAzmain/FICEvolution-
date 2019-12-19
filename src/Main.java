@@ -90,8 +90,10 @@ public class Main {
 
     private void processChunks() {
         ChunkProcessor chunkProcessor = new ChunkProcessor();
-        for(GHTag tag : tags)
+        for(GHTag tag : tags){
             chunkProcessor.processChunks(tag);
+        }
+//        chunkProcessor.processChunks(tags.get(tags.size()-2));
     }
 
     private void init() {
@@ -150,14 +152,14 @@ public class Main {
 
     private List<String> getProjects() {
         return Arrays.asList(
-//                "google/guava",
+                "google/guava"
 //                "mockito/mockito",
 //                "apache/commons-lang",
 //                "apache/hadoop",
 //                "elastic/elasticsearch",
 //                "SeleniumHQ/selenium",
 //                "spring-projects/spring-framework",
-                "apache/tomcat"
+//                "apache/tomcat"
         );
 
     }

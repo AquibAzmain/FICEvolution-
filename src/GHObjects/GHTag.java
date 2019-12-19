@@ -14,11 +14,13 @@ public class GHTag implements Comparable<GHTag> {
     private Ref ref;
     private List<GHCommit> commits;
     private String separator;
+    private List<GHTimeChunk> chunks;
 
     public GHTag(Ref ref) {
         this.ref = ref;
 //        extractVersion(ref.getName());
         commits = new ArrayList<>();
+        chunks = new ArrayList<>();
     }
 
     public void extractVersion(String name){
@@ -50,6 +52,14 @@ public class GHTag implements Comparable<GHTag> {
 
     public void setCommits(List<GHCommit> commits) {
         this.commits = commits;
+    }
+
+    public List<GHTimeChunk> getChunks() {
+        return chunks;
+    }
+
+    public void setChunks(List<GHTimeChunk> chunks) {
+        this.chunks = chunks;
     }
 
     @Override
