@@ -1,7 +1,4 @@
-import FICOutputProcessor.CycWriter;
-import FICOutputProcessor.FrequencyWriter;
-import FICOutputProcessor.IntervalWriter;
-import FICOutputProcessor.LocWriter;
+import FICOutputProcessor.*;
 import GHAnalyzer.*;
 import GHObjects.GHCommit;
 import GHObjects.GHTag;
@@ -32,7 +29,7 @@ public class Main {
             System.out.println("BEGIN ANALYSIS for " + project);
             init();
             collectData(project);
-//            outputData(project);
+            outputData(project);
         }
     }
 
@@ -40,8 +37,17 @@ public class Main {
         String projectName = project.split("/")[1];
 //        outputLoc(projectName);
 //        outputCyc(projectName);
-        outputInterval(projectName);
-        outputFreq(projectName);
+//        outputInterval(projectName);
+//        outputFreq(projectName);
+        outputChunks(projectName);
+    }
+
+    private void outputChunks(String projectName) throws FileNotFoundException {
+        ChunkWriter chunkWriter = new ChunkWriter();
+        for(GHTag tag : tags){
+            chunkWriter.extractChunks(tag);
+        }
+        chunkWriter.printChunkResult(projectName);
     }
 
     private void outputFreq(String project) throws FileNotFoundException {
@@ -152,14 +158,14 @@ public class Main {
 
     private List<String> getProjects() {
         return Arrays.asList(
-                "google/guava"
-//                "mockito/mockito",
-//                "apache/commons-lang",
-//                "apache/hadoop",
-//                "elastic/elasticsearch",
-//                "SeleniumHQ/selenium",
-//                "spring-projects/spring-framework",
-//                "apache/tomcat"
+                "google/guava",
+                "mockito/mockito",
+                "apache/commons-lang",
+                "apache/hadoop",
+                "elastic/elasticsearch",
+                "SeleniumHQ/selenium",
+                "spring-projects/spring-framework",
+                "apache/tomcat"
         );
 
     }
